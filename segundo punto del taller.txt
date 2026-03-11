@@ -1,0 +1,36 @@
+using System;
+
+public class temperatura
+{
+    static void Main()
+    {
+    Console.WriteLine("Ingrese la temperatura corporal:");
+    double temp = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Ingrese la presión");
+    double pres = Convert.ToDouble(Console.ReadLine());
+   
+    string clasificacion;
+    string recomendacion;
+    if(temp >= 39 || pres >= 180)
+    {
+        clasificacion = "ROJO-CRÍTICO";
+        recomendacion = "REZA";
+    }
+    else if(temp >= 38 || pres >= 140)
+    {
+        clasificacion = "AMARILLO-URGENTE";
+        recomendacion = "Atencion requerida con urgencia";
+    }
+    else
+    {
+        clasificacion = "VERDE-ESTABLE";
+        recomendacion = "Atencion no requerida";
+    }
+    
+    Console.WriteLine("Temperatura: "+temp);
+    Console.WriteLine("Presión: "+pres);
+    Console.WriteLine("-------------------");
+    Console.WriteLine("Triaje: "+clasificacion);
+    Console.WriteLine("Recomendación: "+recomendacion);
+    }
+}
